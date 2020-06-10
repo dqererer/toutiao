@@ -5,12 +5,12 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    count: 100
+    isShowTab: true,
   },
   mutations: {
-    increment (state) {
-      state.count++
-    }
+    changeTabShowStatus (state) {
+      state.isShowTab = !state.isShowTab;
+    },
   }
 })
 

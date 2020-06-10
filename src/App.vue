@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <tab></tab>
+    <tab v-if="$store.state.isShowTab">{{$store.state.isShowTab}}</tab>
   </div>
 </template>
 
@@ -9,8 +9,16 @@
 import Tab from "./components/Tab";
 export default {
   name: 'App',
+  data: function(){
+    return{
+      isShowTab:true,
+    }
+  },
   components:{
     Tab,
+  },
+  created: function(){
+    this.isShowTab = this.$store.state.isShowTab;
   }
 }
 </script>

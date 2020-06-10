@@ -1,19 +1,20 @@
 <template>
-  <div class="index">
-    <Head></Head>
-    index
+  <div class="search">
+    search
   </div>
 </template>
 
 <script>
-import Head from'../../components/Head/Head';
 export default {
-  name: 'Index',
-  created: function(){
-    // alert(this.$store.state.count);
-  },
+  name: 'Search',
   components:{
-    Head,
+    
+  },
+  created: function(){
+    this.$store.commit('changeTabShowStatus');
+  },
+  destroyed: function(){
+    this.$store.commit('changeTabShowStatus');
   }
 }
 </script>

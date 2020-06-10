@@ -1,12 +1,17 @@
 <template>
-  <div class="about">
-    about
+  <div class="ixigua">
+    <Head></Head>
+    xigship
   </div>
 </template>
 
 <script>
+import Head from '../../components/Head/Head'
 export default {
-  name: 'About',
+  name: 'Ixigua',
+  components: {
+    Head,
+  }
 }
 </script>
 

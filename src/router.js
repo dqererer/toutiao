@@ -5,7 +5,9 @@ import VueRouter from 'vue-router';
 // 可以从其他文件 import 进来
 // import Vue from 'vue'
 import index from './pages/index/Index';
-import about from './pages/about/Index';
+import ixigua from './pages/Ixigua/Index';
+import mine from './pages/Mine/Index';
+import search from './pages/Search/Index'
 
 Vue.use(VueRouter);
 // 2. 定义路由
@@ -14,8 +16,11 @@ Vue.use(VueRouter);
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
+  { path: '/', component: index ,name:""},
   { path: '/index', component: index ,name:"index"},
-  { path: '/about', component: about ,name:"about"}
+  { path: '/ixigua', component: ixigua ,name:"ixigua"},
+  { path: '/mine', component: mine ,name:"mine"},
+  { path:'/search',component:search ,name:"search"},
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置

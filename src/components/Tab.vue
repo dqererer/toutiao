@@ -2,17 +2,30 @@
   <div class="tab">
     <div class="wrap">
       <router-link to="/index">
-        <span class="iconfont">&#xe608;</span>
-        <p>首页</p>
+        <div class="item cur">
+          <span class="iconfont">&#xe61f;</span>
+          <p>首页</p>
+        </div> 
       </router-link>
-      <router-link to="/about">西瓜视频</router-link>
-      <router-link to="/about"><span v-if="1">未登录</span><span v-else>我的</span></router-link>
+      <router-link to="/ixigua">
+        <div class="item">
+          <span class="iconfont">&#xe615;</span>
+          <p>西瓜视频</p>
+        </div>
+      </router-link>
+      <router-link to="/mine">
+        <div class="item">
+          <span class="iconfont">&#xe608;</span>
+          <span v-if="1">未登录</span>
+          <span v-else>我的</span>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import '../assets/font_1589564_fgqs3ab19vr/iconfont.css'
+
 export default {
   name: 'Tab',
   created: function(){
@@ -34,11 +47,16 @@ export default {
     align-items: center;
     justify-content: space-around;
   }
-  a:link,
-  a:visited,
-  a:hover,
-  a:active{
-    color: black;
-    text-decoration: none;
-  } 
+  .tab .wrap .item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .tab .wrap .item .iconfont{
+    font-size: 1.5rem;
+  }
+  .router-link-active{
+    color: red;
+  }
 </style>

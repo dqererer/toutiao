@@ -1,19 +1,14 @@
 <template>
   <div class="index">
-    <Head></Head>
-    index
+    mine
   </div>
 </template>
 
 <script>
-import Head from'../../components/Head/Head';
 export default {
   name: 'Index',
   created: function(){
     // alert(this.$store.state.count);
-  },
-  components:{
-    Head,
   }
 }
 </script>
