@@ -1,9 +1,24 @@
 <template>
-  <div class="search" v-if="$store.state.showComponent.search.isShow">
-    <div class="layout">
+  <transition name="fade">
+    <div class="search layout" v-if="$store.state.showComponent.search.isShow">
       <Back componentName="search"></Back>
+      <p>
+        rfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkk
+      </p>
+      <p>
+        rfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkk
+      </p><p>
+        rfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkk
+      </p><p>
+        rfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkk
+      </p><p>
+        rfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkk
+      </p><p>
+        rfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkkaedsdfrfkkkkkkkkk
+      </p>
+      
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -23,5 +38,15 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.fade-enter-active {
+  /* transform: translateX(0);  */
+  transition: all .1s ease-out;
+}
+.fade-leave-active {
+  transition: all .1s ease;
+}
+.fade-enter
+/* .fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(1rem);
+}
 </style>
