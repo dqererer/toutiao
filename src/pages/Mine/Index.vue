@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    mine
+    首页
   </div>
 </template>
 

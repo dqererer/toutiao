@@ -5,12 +5,19 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    isShowTab: true,
+    showComponent:{
+      search: {
+        isShow: false,
+        showType: "left",
+      },
+
+    },
   },
   mutations: {
-    changeTabShowStatus (state) {
-      state.isShowTab = !state.isShowTab;
+    changeComponentShowStatus (state,payload) {
+      state.showComponent[payload].isShow = !state.showComponent[payload].isShow;
     },
+
   }
 })
 

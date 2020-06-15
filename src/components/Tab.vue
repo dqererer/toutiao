@@ -36,10 +36,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .tab{
+    background: #e0e1e636;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 3rem;
+    height: 4rem;
   } 
   .tab .wrap{
     height: 100%;

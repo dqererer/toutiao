@@ -1,11 +1,11 @@
 <template>
-  <router-link class="search" to="/search">
+  <div class="search" @click="showSearchComponent">
     <div class="icon">
       <span class="iconfont">&#xe633;</span>
     </div>
     <div class="keywords">{{keyword}}</div>
     <div class="mask"></div>
-  </router-link>
+  </div>
 </template>
 
 <script>
@@ -28,7 +28,9 @@ export default {
     })
   },
   methods:{
-
+    showSearchComponent: function(){
+      this.$store.commit('changeComponentShowStatus','search');
+    }
   }
 }
 </script>

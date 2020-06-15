@@ -1,21 +1,23 @@
 <template>
-  <div class="index">
-    <Head></Head>
-    <div class="content layout">
-      index
+  <div class="search" v-if="$store.state.showComponent.search.isShow">
+    <div class="layout">
+      <Back componentName="search"></Back>
     </div>
   </div>
 </template>
 
 <script>
-import Head from'../../components/Head/Head';
+import Back from './Back';
 export default {
-  name: 'Index',
+  name: 'Search',
+  components:{
+    Back,
+  },
   created: function(){
     // alert(this.$store.state.count);
   },
-  components:{
-    Head,
+  methods:{
+
   }
 }
 </script>

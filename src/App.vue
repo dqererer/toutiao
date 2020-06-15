@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <tab v-if="$store.state.isShowTab">{{$store.state.isShowTab}}</tab>
+    <div class="page">
+      <router-view></router-view>
+      <Tab></Tab>
+    </div>
+    <Search class="component"></Search>
+
   </div>
 </template>
 
 <script>
-import Tab from "./components/Tab";
+import Tab from './components/Tab';
+import Search from './components/Search';
 export default {
   name: 'App',
   data: function(){
     return{
-      isShowTab:true,
+      // isShowSearchComponent: this.$store.state.isShowSearchComponent,
     }
   },
   components:{
     Tab,
+    Search,
   },
   created: function(){
-    this.isShowTab = this.$store.state.isShowTab;
+    // this.isShowSearchComponent = ;
   }
 }
 </script>
 
 <style scoped>
-  
+#app{
+  height: 100%;
+}
+.component{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
 </style>
