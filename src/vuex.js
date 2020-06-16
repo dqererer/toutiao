@@ -12,10 +12,16 @@ const store = new Vuex.Store({
       },
 
     },
+    currentKeyword:"",
   },
   mutations: {
     changeComponentShowStatus (state,payload) {
       state.showComponent[payload].isShow = !state.showComponent[payload].isShow;
+    },
+    setCurrentKeyword: function(state,payload){
+      alert(payload)
+      state.currentKeyword = payload;
+      alert(state.currentKeyword);
     },
 
   }
