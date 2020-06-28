@@ -4,14 +4,13 @@
       <router-view></router-view>
       <Tab></Tab>
     </div>
-    <Search class="component"></Search>
-
+    <Search class="component"  v-if="$store.state.showComponent.search.isShow"></Search>
   </div>
 </template>
 
 <script>
 import Tab from './components/Tab';
-import Search from './components/Search';
+import Search from './components/Search/Search';
 export default {
   name: 'App',
   data: function(){

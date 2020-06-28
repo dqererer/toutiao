@@ -1,8 +1,8 @@
 <template>
   <div class="head">
     <div class="content">
-      <div class="search-wrap">
-        <Search></Search>
+      <div class="input-wrap">
+        <InputBox></InputBox>
       </div>
       <div class="post-wrap">
         <Post></Post>
@@ -13,7 +13,7 @@
 
 <script>
 import Post from './Post';
-import Search from './Search';
+import InputBox from './InputBox';
 export default {
   name: 'Head',
   created: function(){
@@ -21,7 +21,7 @@ export default {
   },
   components:{
     Post,
-    Search
+    InputBox
   }
 }
 </script>
@@ -30,7 +30,6 @@ export default {
   .head{
     width: 100%;
     background: red;
-    /* display: flex; */
     height: 5rem;
     padding-top: 2rem;
     box-sizing: border-box;
@@ -40,14 +39,13 @@ export default {
     height: 3rem;
     margin: 0 auto; 
   }
-  .head .content .search-wrap{
+  .head .content .input-box{
     float: left;
-    /* flex:5; */
     width: 16rem;
     height: 2.5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .head .content .post-wrap{
     float: right;

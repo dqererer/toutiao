@@ -19,9 +19,7 @@ const store = new Vuex.Store({
       state.showComponent[payload].isShow = !state.showComponent[payload].isShow;
     },
     setCurrentKeyword: function(state,payload){
-      alert(payload)
       state.currentKeyword = payload;
-      alert(state.currentKeyword);
     },
 
   }
