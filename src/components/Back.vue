@@ -10,7 +10,6 @@ export default {
     componentName: String,
   },
   created: function(){
-    // alert(this.$store.state.count);
   },
   methods:{
     hideCurrentComponent: function(){

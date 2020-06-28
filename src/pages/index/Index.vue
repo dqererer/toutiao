@@ -2,13 +2,18 @@
   <div class="index">
     <Head></Head>
     <div class="content layout">
-      index
+      <Channel></Channel>
+      <div class="content">
+        index
+      </div>
+      
     </div>
   </div>
 </template>
 
 <script>
 import Head from'../../components/Head/Head';
+import Channel from '../../components/Channel/Channel'
 export default {
   name: 'Index',
   created: function(){
@@ -16,6 +21,7 @@ export default {
   },
   components:{
     Head,
+    Channel
   }
 }
 </script>

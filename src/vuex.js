@@ -24,7 +24,6 @@ const store = new Vuex.Store({
     },
     changeKeywordsIndex: function(state){
       state.isIndexChanged = !state.isIndexChanged;
-      alert(state.isIndexChanged);
     }
 
   }
