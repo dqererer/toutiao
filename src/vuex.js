@@ -13,6 +13,7 @@ const store = new Vuex.Store({
 
     },
     currentKeyword:"",
+    isIndexChanged:false,
   },
   mutations: {
     changeComponentShowStatus (state,payload) {
@@ -21,6 +22,10 @@ const store = new Vuex.Store({
     setCurrentKeyword: function(state,payload){
       state.currentKeyword = payload;
     },
+    changeKeywordsIndex: function(state){
+      state.isIndexChanged = !state.isIndexChanged;
+      alert(state.isIndexChanged);
+    }
 
   }
 })

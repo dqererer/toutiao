@@ -35,6 +35,9 @@ export default {
     this.getKeywords();
     this.getHistroyList();
   },
+  beforeDestroy: function(){
+    this.$store.commit('changeKeywordsIndex');   
+  },  
   methods:{
     getKeywords: function(){
       this.keywords = this.$store.state.currentKeyword;
@@ -60,7 +63,6 @@ export default {
     },
     componentChange: function(obj){
       this.componentType = obj.type;
-      alert(this.componentType)
       if(obj.val){
          this.keyword = obj.val;
       }

@@ -33,6 +33,9 @@ export default {
       }
       return arr;
     },
+    isIndexChanged: function(){
+      return this.$store.state.isIndexChanged;
+    },
   },
   created: function(){
     this.getKeywords();
@@ -46,15 +49,19 @@ export default {
     curIndex: function(){
       this.keywordsMove();
     },
+    isIndexChanged: function(newValue){
+      if(newValue == true){
+        this.curIndex++;
+        this.curIndexPlus();
+        this.$store.commit('changeKeywordsIndex');
+      }
+    },
   },
   destroyed:function(){
     clearInterval(this.interval);
   },
   methods:{
     showSearchComponent: function(){
-      console.log(this.keywords);
-      console.log(this.curIndex);
-      console.log(this.keywords[3 - this.curIndex]);
       this.$store.commit('changeComponentShowStatus','search');
       this.$store.commit('setCurrentKeyword',this.keywords[3 - this.curIndex]);
     },
@@ -66,13 +73,18 @@ export default {
           that.keywords[i]=[arr[j],arr[j+1]];
         }
         that.keywords.reverse();
-        that.interval = setInterval(function(){
-          that.curIndex++;
-          if(that.curIndex > that.keywords.length){
-            that.curIndex = 0;
-          }
-        },2*1000*5);
+        that.curIndexPlus();
       })
+    },
+    curIndexPlus: function(){
+      clearInterval(this.interval);
+      var that = this;
+      this.interval = setInterval(function(){
+        that.curIndex++;
+        if(that.curIndex > that.keywords.length){
+          that.curIndex = 0;
+        }
+      },2*1000*5);
     },
     keywordsLocationIni: function(){
         let elOfKeywords = this.$refs.keywords;
@@ -85,8 +97,6 @@ export default {
       let el = this.$refs.keywords;
       let infoOfInput = this.$refs.input.getBoundingClientRect();
       var offset;
-      console.log("curindex",this.curIndex);
-      console.log("lenth",this.keywords.length);
       if(this.curIndex >= this.keywords.length){
         el.style.transform = 'translateY(0px)';
       }else{
@@ -97,7 +107,6 @@ export default {
             clearInterval(this.timing);
           }else{
             offset ++;
-            console.log('offset',offset);
             el.style.transform = 'translateY(' + offset + 'px)';
           }
         },10)

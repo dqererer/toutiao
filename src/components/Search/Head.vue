@@ -44,6 +44,7 @@ export default {
     search: function(){
       let cur_value = this.value || this.keywords[0];
       this.$emit('search',cur_value);
+      this.$emit('component',{ type: 2 , val: cur_value });
     },
     getFocus: function(){
       this.isFocus = true;
