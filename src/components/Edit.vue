@@ -1,6 +1,6 @@
 <template>
-  <div class="back" @click="hideCurrentComponent">
-    <span class="iconfont">&#xe60a;</span>
+  <div class="edit" @click="showChannelEditComponent">
+    <span class="iconfont">&#xe643;</span>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   created: function(){
   },
   methods:{
-    hideCurrentComponent: function(){
+    showChannelEditComponent: function(){
       this.$store.commit('changeComponentShowStatus',this.componentName);
     },
   }
@@ -22,7 +22,13 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.iconfont{
-  font-size: 1.5rem;
+.edit{
+  position: absolute;
+  top: 0rem;
+  left: 21rem;
+  background: linear-gradient(to left, transparent, white, transparent);
+  height: 100%;
+  width: 2rem;
+  text-align: center;
 }
 </style>

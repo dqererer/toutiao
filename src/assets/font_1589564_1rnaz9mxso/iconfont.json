@@ -6,6 +6,69 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2127117",
+      "name": "返回",
+      "font_class": "back",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "4789373",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "5387919",
+      "name": "箭头_左上_o",
+      "font_class": "jiantou_zuoshang_o",
+      "unicode": "eb8e",
+      "unicode_decimal": 60302
+    },
+    {
+      "icon_id": "201556",
+      "name": "查看",
+      "font_class": "chakan",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "4266165",
+      "name": "垃圾桶",
+      "font_class": "lajitong",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "14145113",
+      "name": "隐藏",
+      "font_class": "yincang",
+      "unicode": "e73e",
+      "unicode_decimal": 59198
+    },
+    {
+      "icon_id": "680104",
+      "name": "收起",
+      "font_class": "shouqi",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "15612022",
+      "name": "返回",
+      "font_class": "back-copy",
+      "unicode": "eb90",
+      "unicode_decimal": 60304
+    },
+    {
+      "icon_id": "15611934",
+      "name": "返回",
+      "font_class": "back-copy1",
+      "unicode": "eb8f",
+      "unicode_decimal": 60303
+    },
+    {
       "icon_id": "287175",
       "name": "搜索",
       "font_class": "sousuo",

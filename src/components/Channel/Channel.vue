@@ -30,16 +30,14 @@ export default {
   overflow-y: hidden;
 }
 .channel .list{
-  width: 200%;
+  white-space: nowrap;
+  padding-right: 10rem;
 }
 .channel .list .item{
-  width: 4rem;
-  float: left;
+  margin-right: 1.5rem;
+  display: inline-block;
 }
-/* .channel .list{
-  display: flex;
-} 
-.channel .list .item{
-  width: 4rem;
-}   */
+.channel .list .item:last-child{
+  margin: 0;
+}
 </style>

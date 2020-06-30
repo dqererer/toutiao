@@ -65,20 +65,27 @@ export default {
 }
 .header .input-wrap{
   position: relative;
-  width: 18rem;
+  width: 17rem;
 }
 .header .input-wrap input{
   background: #86828214;
   border: 0;
   border-radius: 1rem;
   height: 2rem;
-  width: 18rem;
-  padding-left: 3rem;
+  width: 16.5rem;
+  padding-left: 2.5rem;
   box-sizing: border-box;
 }
 .header .input-wrap span{
   position: absolute;
   top: .5rem;
   left: 1rem;
+}
+
+button{
+  padding: 0;
+  font-size: 1rem;
+  border: 0;
+  background: transparent;
 }
 </style>

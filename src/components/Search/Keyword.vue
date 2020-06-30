@@ -9,8 +9,13 @@
   </div>
   <div class="history-list" v-if="historyList.length">
     <div class="top">
-      <div class="title">历史记录></div>
-      <span @click="deleteHistroyList">垃圾桶</span>
+      <div class="title">
+        <span>历史记录</span>
+        <span class="iconfont">&#xeb8f;</span>
+      </div>
+      <div class="delete">
+        <span class="iconfont" @click="deleteHistroyList">&#xe716;</span>
+      </div>
     </div>
     <div class="content">
       <ul>
@@ -22,8 +27,8 @@
   </div>
   <div class="guess">
     <div class="top">
-      <div class="title">历史记录></div>
-      <span @click="deleteHistroyList">不看了</span>
+      <div class="title">猜你想搜</div>
+      <span class="iconfont yb" @click="deleteHistroyList">&#xe73e;</span>
     </div>
     <div class="content">
       <ul>
@@ -80,7 +85,7 @@ export default {
 ul{
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   border-bottom: .01rem solid #e4dede;
 }
 li{
@@ -93,16 +98,32 @@ li{
   box-sizing: border-box;
 }
 li:nth-of-type(odd){
-  border-right: .01rem solid #bbb6b6;
+  border-right: .01rem solid #cac6c673;
 }
 li:nth-of-type(even){
   padding-left: 1rem;
 }
 .top{
   display: flex;
-  height: 4rem;
+  padding-top: 0.5rem;
   justify-content: space-between;
   align-items: center;
   color: #757070;
+}
+.top .title{
+  width: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b7b2b2;
+}
+.history-list .top .delete .iconfont{
+  font-size: 1.5rem;
+}
+.yb{
+  font-size: 1.5rem;
+}
+.guess ul{
+  border: 0;
 }
 </style>

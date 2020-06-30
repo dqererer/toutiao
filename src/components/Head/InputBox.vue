@@ -161,6 +161,7 @@ export default {
   transform: translateY(1rem);
 }
 .input-box .mask{
+  position: relative;
   width: 2rem;
   height: 3rem;
   background: linear-gradient(to left, white, transparent);
