@@ -4,27 +4,31 @@
       <router-view></router-view>
       <Tab></Tab>
     </div>
-    <Search class="component"  v-if="$store.state.showComponent.search.isShow"></Search>
+      <transition name="basic fade">
+        <Search class="component"  v-if="$store.state.showComponent.search.isShow"></Search>
+      </transition>
+      <transition name="basic pop">
+        <MyChannel class="component"  v-if="$store.state.showComponent.myChannel.isShow"></MyChannel>
+      </transition>
   </div>
 </template>
 
 <script>
 import Tab from './components/Tab';
 import Search from './components/Search/Search';
+import MyChannel from './components/myChannel/MyChannel';
 export default {
   name: 'App',
   data: function(){
-    return{
+    return {
       // isShowSearchComponent: this.$store.state.isShowSearchComponent,
     }
   },
   components:{
     Tab,
     Search,
+    MyChannel,
   },
-  created: function(){
-    // this.isShowSearchComponent = ;
-  }
 }
 </script>
 
@@ -39,5 +43,27 @@ export default {
   height: 100%;
   width: 100%;
   background: white;
+}
+.fade-enter-active {
+  /* transform: translateX(0);  */
+  transition: all .2s ease-out;
+}
+.fade-leave-active {
+  transition: all .2s ease;
+}
+.fade-enter
+/* .fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(2rem);
+}
+.pop-enter-active{
+  transform: translateX(0); 
+  transition: all .2s ease-out;
+}
+.pop-leave-active{
+  transition: all .2s ease;
+}
+.pop-enter , .pop-leave-to
+/* .fade-leave-active for below version 2.1.8 */ {
+  transform: translateY(100%);
 }
 </style>

@@ -20,6 +20,12 @@
           <span v-else>我的</span>
         </div>
       </router-link>
+      <router-link to="/test">
+        <div class="item">
+          <span class="iconfont">&#xe608;</span>
+          <span>test</span>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="header">
     <Back componentName="search"></Back>
     <div class="input-wrap">
-      <input type="text" autofocus="autofocus" :placeholder="keywords[0]" v-model="value" @focus="getFocus" @blur="loseFocus">
+      <input type="text" v-focus :placeholder="keywords[0]" v-model="value" @focus="getFocus" @blur="loseFocus">
       <span class="iconfont">&#xe633;</span>
     </div>
     <button type="submit" @click="search">搜索</button>

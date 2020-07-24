@@ -54,11 +54,17 @@ export default {
     keywords: Array,
     historyList: Array,
   },
+  // computed: {
+  //   historyListNew: function(){
+  //     this.historyList.reverse();
+  //     return this.historyList;
+  //   },
+  // },
   components:{
     
   },
   created: function(){
-    this.axios.get("./api/search/guess").then((res) => {
+    this.axios.get("/api/search/guess").then((res) => {
       this.guessList = res.data.data;
     })
   },

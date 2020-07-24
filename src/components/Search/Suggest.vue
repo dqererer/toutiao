@@ -35,7 +35,7 @@ export default {
   },
   methods:{
     getSuggestList: function(){
-      this.axios.get("./api/search/suggest?req=1").then((res) => {
+      this.axios.get("./api/search/suggest").then((res) => {
         this.suggestList = res.data.data;
       })
     },

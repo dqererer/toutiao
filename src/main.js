@@ -9,9 +9,23 @@ import './assets/font_1589564_1rnaz9mxso/iconfont.css'
 
 Vue.use(VueAxios, axios);
 Vue.config.productionTip = false
-
-new Vue({
+Vue.directive("focus",{
+  inserted: (el,binding) => {
+    el.focus();
+    console.log('binding',binding);
+  },
+});
+Vue.filter('percent',function(val){
+  val = (val /100) + '%';
+  return val;
+});
+Vue.filter('point',function(val){
+  val =  val / 100;
+  return val;
+})
+const vm = new Vue({
   render: h => h(App),
   router,
   store,
-}).$mount('#app')
+})
+vm.$mount('#app')

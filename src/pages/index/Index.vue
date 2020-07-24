@@ -1,4 +1,5 @@
 <template>
+  <keep-alive>
   <div class="index">
     <Head></Head>
     <div class="content layout">
@@ -7,7 +8,7 @@
           <Channel></Channel>
         </div>
         <div class="edit">
-          <Edit componentNam="edit"></Edit>
+          <Edit componentName="myChannel"></Edit>
         </div>
       </div>
       <div class="content">
@@ -16,6 +17,7 @@
       
     </div>
   </div>
+  </keep-alive>
 </template>
 
 <script>
@@ -38,5 +40,8 @@ export default {
 <style scoped>
 .header{
   position: relative;
+}
+.channel{
+  margin-right: 1rem;
 }
 </style>

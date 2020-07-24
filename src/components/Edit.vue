@@ -15,6 +15,7 @@ export default {
   },
   methods:{
     showChannelEditComponent: function(){
+      console.log(this.componentName);
       this.$store.commit('changeComponentShowStatus',this.componentName);
     },
   }
