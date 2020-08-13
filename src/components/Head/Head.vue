@@ -14,6 +14,8 @@
 <script>
 import Post from './Post';
 import InputBox from './InputBox';
+// improt {mapGetter} from 'vuex';
+import { mapState } from 'vuex'
 export default {
   name: 'Head',
   created: function(){
@@ -22,7 +24,26 @@ export default {
   components:{
     Post,
     InputBox
+  },
+  computed: {
+    xxx: function(){
+      return this.a + 1;
+    },
+    // ...mapState(['count0', 'count1', 'count2']),
+    ...mapState({
+      name: 'count0',
+      age: 'count1',
+      cc: state => {return state.count2 + state.count0}
+    })
   }
+  // computed:{
+  //   count: function(){
+  //     return this.$store.state.count;
+  //   },
+  //   count2: function(){
+  //     return this.$store.state.count2;
+  //   }
+  // }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

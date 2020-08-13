@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div class="input">
-      <input :value="value" @input="function(e){change(e, 1)}">
+      123<input :value="value" @input="function(e){change(e, 1)}">
       <!-- <input :value="value" @input="change"> -->
       <!-- <input :value="value" @input="$emit('input', $event.target.value)"> -->
       <span>{{value}}</span>
@@ -15,6 +15,22 @@
 </template>
 
 <script>
+var sleep = function (time){
+    var now = new Date();
+  
+    var obj = new Promise((resolve,reject)=>{
+        if(time>10000){
+            reject('失败：大于10s不允许');
+            return;
+        }
+    
+        setTimeout(function(){
+            resolve('a')
+        }, time)
+    })
+    return obj;
+}
+
 import Bus from './Bus.js';
 export default {
   name: 'Son',
@@ -45,7 +61,51 @@ export default {
     // console.log("mounted",this.value);
   },
   methods: {
-    change: function(e){
+
+      // sleep(1000).then(res => {
+      //   console.log(res)
+      //   // return res + '123';
+      //   return {
+      //     orign: res,
+      //     new: res + '123'
+      //   }
+      // }).then(res => {
+      //   console.log(res.origin)
+      // })
+    change: async function(e){
+
+      // const a = 1;
+      // console.log(a)
+      // const res = await sleep(1000);
+      // console.log('res', res)
+
+
+
+
+
+
+//  axios.get('').then(res=>{
+//    window.vAlert({
+
+//    });
+//    console.log(res);
+//    locaton.href = 'https/wwww.baidu.com'
+//  })
+//   console.log('end');
+
+
+//  const res = await axios.get('');
+//   window.vAlert({
+
+//   });
+//   console.log(res);
+//   locaton.href = 'https/wwww.baidu.com'
+
+
+
+
+
+
       // this.$emit('input', this.$event.target.value);
       this.$emit('input111', e.target.value);
       // this.$emit('input111', document.getElementById('input').value);

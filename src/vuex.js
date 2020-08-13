@@ -17,6 +17,7 @@ const store = new Vuex.Store({
     },
     currentKeyword:"",
     isIndexChanged:false,
+    abc:"",
   },
   mutations: {
     changeComponentShowStatus (state,payload) {
@@ -28,8 +29,15 @@ const store = new Vuex.Store({
     },
     changeKeywordsIndex: function(state){
       state.isIndexChanged = !state.isIndexChanged;
+    },
+    set: function(){
+      state.abc = "有数据了";
+    },
+  },
+  actions:{
+    setDate({commit}){
+      commit('set');
     }
-
   }
 })
 

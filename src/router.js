@@ -17,11 +17,12 @@ Vue.use(VueRouter);
 // 我们晚点再讨论嵌套路由。
 const routes = [
   // { path: '/', component: index},
-  { path: '/', redirect: 'index'},
+  { path: '*', redirect: 'index'},
   { path: '/index', component: index ,name:"index"},
   { path: '/ixigua', component: ixigua ,name:"ixigua"},
   { path: '/mine', component: mine ,name:"mine"},
   { path: '/test' , component:test ,name:'test'},
+  { path: '*', redirect: 'index'},
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置

@@ -6,6 +6,7 @@
       <p v-if="1" id="rg">xixi</p>
     </div>
     <div class="v-modle">
+      <p>双向绑定原理</p>
       <input id="input" type="text" :value="message" @input="changeMessage">
       <span>{{message}}</span>
     </div>
@@ -44,6 +45,16 @@
         </ul>
       </div>
     </div>
+    <div @click="dingshiqi">
+      触发定时器
+    </div>
+    <div @click="promise">
+      触发promise
+    </div>
+    <div class="vuex">
+      this is vuex
+      {{vuexDate}}
+    </div>
   </div>
 </template>
 
@@ -62,6 +73,11 @@ export default {
       self_title:"自定义事件的title",
       componentName:  "Son",
       isSonShow: true,
+    }
+  },
+  computed:{
+    vuexDate: function(){
+      return this.$store.state.abc;
     }
   },
   directives:{
@@ -88,12 +104,22 @@ export default {
     // alert('beforeCreate');
   },
   created: function(){
+    this.$store.dispatch('setDate'); 
     // console.log('ed',this.a);
       // alert('created');
       for(var i = 0;i<10;i++){
         console.log(i);
       }
       alert(i);
+    //字符串多行
+      var str = "abc"+
+      "def";
+      var str2 = [
+        '123',
+        '456'
+      ].join('');
+      console.log(str);
+      console.log(str2);
   },
   beforeMount: function(){
     // console.log('beforemount', this,document.getElementById('mine').innerHTML);
@@ -110,9 +136,9 @@ export default {
     //闭包绑定
     var list = document.getElementsByTagName('li');
     for(var i = 0 ; i < list.length ; i++){
-      list[i].onclick = function(i){
-        alert(i);
-      }
+      // list[i].onclick = function(){
+      //   alert(i);
+      // }
       list[i].onclick = (function(n){
         return function(){
           alert(n);
@@ -130,6 +156,13 @@ export default {
     },
     changeMessage: function(e){
       this.message = e.target.value;
+      var that = this;
+      setTimeout(function(){
+        that.message = that.message + "0";
+      },4000)
+    },
+    bindFunction: function(){
+      Object.defineProperty("this")
     },
     test: function(){
       // console.log("test");
@@ -166,16 +199,16 @@ export default {
       }
       Exam.prototype = s1;
       var e = new Exam(100);
-      // console.log(e);
+      console.log(e);
       //构造函数继承
-      var Person = function(age){
-        this.age = age;
-      }
-      var Studunt = function(score,age){
-        this.score = score;
-        Person.call(this,age);
-      }
-      var s = new Studunt(100,20);
+      // var Person = function(age){
+      //   this.age = age;
+      // }
+      // var Studunt = function(score,age){
+      //   this.score = score;
+      //   Person.call(this,age);
+      // }
+      // var s = new Studunt(100,20);
 
     },
     bibao: function(){
@@ -196,12 +229,35 @@ export default {
       console.log("add执行第一次");
       add();
 
+    },
+    dingshiqi: function(callback,time){
+      var now = new Date();
+      while((new Date() - now) < time){
+        window.wait();
+      }
+      callback();
+    },
+    promise: function(){
+      new Promise((lala,resolve)=>{
+        // resolve("做好了");
+        lala("做不了了");
+      }).then(
+        (value)=>{
+          console.log('好了',value);
+        },
+        (reason)=>{
+          console.log('不好',reason);
+        }
+      )
     }
   }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.index{
+  padding-bottom: 7rem;
+}
 .event-test{
   height: 6rem;
   width: 20rem;
