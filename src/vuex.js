@@ -30,13 +30,16 @@ const store = new Vuex.Store({
     changeKeywordsIndex: function(state){
       state.isIndexChanged = !state.isIndexChanged;
     },
-    set: function(){
+    set: function(state){
       state.abc = "有数据了";
     },
   },
   actions:{
     setDate({commit}){
-      commit('set');
+      setTimeout(function(){
+        commit('set');
+      },1000)
+      
     }
   }
 })
