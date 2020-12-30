@@ -15,21 +15,21 @@
 </template>
 
 <script>
-var sleep = function (time){
-    var now = new Date();
+// var sleep = function (time){
+//     var now = new Date();
   
-    var obj = new Promise((resolve,reject)=>{
-        if(time>10000){
-            reject('失败：大于10s不允许');
-            return;
-        }
+//     var obj = new Promise((resolve,reject)=>{
+//         if(time>10000){
+//             reject('失败：大于10s不允许');
+//             return;
+//         }
     
-        setTimeout(function(){
-            resolve('a')
-        }, time)
-    })
-    return obj;
-}
+//         setTimeout(function(){
+//             resolve('a')
+//         }, time)
+//     })
+//     return obj;
+// }
 
 import Bus from './Bus.js';
 export default {

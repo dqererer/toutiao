@@ -21,7 +21,7 @@ export default {
   },
   created: function(){
     this.list = util.getDataFromLocalStorage("selectedChannelList");
-    this.list.reverse();
+    // this.list.reverse();
     console.log(this.list);
   },
 }

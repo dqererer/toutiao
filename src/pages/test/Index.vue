@@ -239,7 +239,7 @@ export default {
     },
     promise: function(){
       new Promise((lala,resolve)=>{
-        // resolve("做好了");
+        resolve("做好了");
         lala("做不了了");
       }).then(
         (value)=>{
